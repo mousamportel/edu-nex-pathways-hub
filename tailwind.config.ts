@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,36 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for Edu Nex
+				"edu-blue": {
+					50: "#E3F2FD",
+					100: "#BBDEFB",
+					200: "#90CAF9",
+					300: "#64B5F6",
+					400: "#42A5F5",
+					500: "#1E88E5",
+					600: "#1976D2",
+					700: "#1565C0",
+					800: "#0D47A1",
+					900: "#0C4DA2",
+				},
+				"edu-purple": {
+					50: "#F5F3FF",
+					100: "#E9E3FE",
+					200: "#D6BCFA",
+					300: "#B197FC",
+					400: "#9B87F5",
+					500: "#7E69AB",
+					600: "#6E59A5",
+					700: "#5A4A8A",
+					800: "#4A3B72",
+					900: "#382D57",
 				}
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				heading: ['Poppins', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -69,28 +99,35 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+				"accordion-down": {
+					from: { height: "0" },
+					to: { height: "var(--radix-accordion-content-height)" },
 				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+				"accordion-up": {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0" },
+				},
+				"fade-in": {
+					"0%": { opacity: "0" },
+					"100%": { opacity: "1" }
+				},
+				"fade-out": {
+					"0%": { opacity: "1" },
+					"100%": { opacity: "0" }
+				},
+				"slide-in": {
+					"0%": { transform: "translateY(10px)", opacity: "0" },
+					"100%": { transform: "translateY(0)", opacity: "1" }
 				}
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
-		}
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				"fade-in": "fade-in 0.3s ease-out",
+				"fade-out": "fade-out 0.3s ease-out",
+				"slide-in": "slide-in 0.4s ease-out"
+			},
+		},
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
